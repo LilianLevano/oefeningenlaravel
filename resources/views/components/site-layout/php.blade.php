@@ -16,7 +16,7 @@
 <header class="mb-5">
     <nav id="nav" class="flex flex-row flex-wrap gap-10 bg-neutral-500 text-white items-center">
         @foreach ($modules as $module)
-            <div style="margin-bottom: 10px; width: 179px; height: 178px" class="border border-amber-50 text-center p-1" >
+            <div style="margin-bottom: 10px; width: fit-content; height: 178px" class="border border-amber-50 text-center p-1" >
                 <strong class="text-black ">{{ ucfirst($module['name']) }}</strong>
 
                 <div  class="flex flex-row gap-5">

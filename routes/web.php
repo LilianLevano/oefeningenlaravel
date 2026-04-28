@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/{module}/{difficulty}/{exo}', function ($module, $difficulty, $exo) {
 
     $module = strtolower($module);
@@ -24,3 +25,6 @@ Route::get('/{module}/{difficulty}/{exo}', function ($module, $difficulty, $exo)
 ]);
 
 
+Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
+Route::get('/extra/test', [\App\Http\Controllers\TestController::class, 'test']);
+Route::get('/extra/oef8', [\App\Http\Controllers\Oefening8Controller::class, 'oef8']);
