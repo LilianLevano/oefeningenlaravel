@@ -13,8 +13,8 @@
 </head>
 <body>
 
-<header class="mb-5">
-    <nav id="nav" class="flex flex-row flex-wrap gap-10 bg-neutral-500 text-white items-center">
+<header id="header" class="mb-5 bg-neutral-500">
+    <nav class="flex flex-row flex-wrap gap-10 text-white items-center">
         @foreach ($modules as $module)
             <div style="margin-bottom: 10px; width: fit-content; height: 178px" class="border border-amber-50 text-center p-1" >
                 <strong class="text-black ">{{ ucfirst($module['name']) }}</strong>
@@ -41,12 +41,20 @@
 
         <hr>
     </nav>
-    <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
+
+    <h1 id="extraLinks" class="text-2xl font-bold">Extra links:</h1>
+    <div id="extra-links-div">
+        <ul>
+            <li><a class="underline text-blue-400" href="/extra/oef8">Module 1 oefening 8</a> </li>
+        </ul>
+    </div>
+
 </header>
 
 <div class="bg"></div>
 
 <main class="pl-6">
+    <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
     {{$slot}}
 </main>
 </body>
