@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('content');    //text = type die meer characters accepteert dan string
-            $table->string('author');
+            $table->foreignId('author_id');
             $table->string('category');
             $table->datetime('published_at');
 

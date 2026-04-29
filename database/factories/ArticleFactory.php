@@ -20,7 +20,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'content' => $this->faker->paragraph(),
-            'author' => $this->faker->name(),
+            'author_id' => $this->faker->numberBetween(1, 10),
             'category' => $this->faker->randomElement(['Iets', 'Tweede woord', 'Derde woord']),
             'published_at' => $this->faker->date(),
             //
