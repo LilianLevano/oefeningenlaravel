@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Oefeningen Laravel</title>
+    <title>{{ $title ?? 'Welcome!' }}</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<header id="header" class="mb-5 bg-neutral-500">
+<header id="header" class=" bg-neutral-500">
     <nav class="flex flex-row flex-wrap gap-10 text-white items-center">
         @foreach ($modules as $module)
             <div style="margin-bottom: 10px; width: fit-content; height: 178px" class="border border-amber-50 text-center p-1" >
@@ -26,9 +26,16 @@
 
                             <div style="margin-left: 15px;">
                                 @foreach ($level['exercises'] as $exercise)
-                                    <a href="/{{ $module['name'] }}/{{ $level['name'] }}/{{ $exercise }}" class="text-blue-400 underline">
-                                        {{ strtoupper($exercise) }}
-                                    </a><br>
+
+                                    @if($exercise == "oef8")
+
+                                    @else
+                                        <a href="/{{ $module['name'] }}/{{ $level['name'] }}/{{ $exercise }}" class="text-blue-400 underline">
+                                            {{ strtoupper($exercise) }}
+                                        </a><br>
+                                    @endif
+
+
 
                                 @endforeach
                             </div>
@@ -42,13 +49,6 @@
         <hr>
     </nav>
 
-    <nav class="bg-pink-300 flex flex-row gap-10 text-2xl">
-        <a class="pl-10 hover:font-bold" href="/">Welcome</a>
-        <a class="pl-10 hover:font-bold" href="/articles">Articles</a>
-        <a class="pl-10 hover:font-bold" href="/tasks">Tasks</a>
-    </nav>
-    <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
-
     <h1 id="extraLinks" class="text-2xl font-bold">Extra links:</h1>
     <div id="extra-links-div">
         <ul>
@@ -56,11 +56,24 @@
         </ul>
     </div>
 
+
+
+
+
+
 </header>
+
+<nav class="bg-pink-300 flex flex-row gap-10 text-2xl mb-5">
+    <a class="pl-10 hover:font-bold" href="/">Welcome</a>
+    <a class="pl-10 hover:font-bold" href="/articles">Articles</a>
+    <a class="pl-10 hover:font-bold" href="/tasks">Tasks</a>
+    <a class="pl-10 hover:font-bold" href="/users">Users</a>
+</nav>
 
 <div class="bg"></div>
 
 <main class="pl-6">
+    <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
     {{$slot}}
 </main>
 </body>
