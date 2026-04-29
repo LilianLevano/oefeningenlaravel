@@ -1,5 +1,5 @@
 <x-site-layout>
-
+    @slot('title', 'Tasks')
     <h1 class="text-3xl font-bold text-center mb-10">Task Manager</h1>
 
 <div class="flex flex-col items-center-safe gap-10  ">
