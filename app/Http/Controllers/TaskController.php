@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use PDO;
 
@@ -12,13 +14,15 @@ class TaskController extends Controller
 
 
 
-        $pdo = new PDO('sqlite:' . __DIR__ . '/../../../database/database.sqlite');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $tasks = Task::all();
 
-        $stmt = $pdo->query("SELECT * FROM tasks");
-        $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return view('tasks.index', ['tasks' => $tasks]);
+    }
 
-        return view('task', ['tasks' => $tasks]);
+    public function show($id){
+        $task = Task::where('id', $id)->firstOrFail();
+
+        return view('tasks.show', ['task' => $task] );
     }
 
 }

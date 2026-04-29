@@ -45,6 +45,7 @@
     <nav class="bg-pink-300 flex flex-row gap-10 text-2xl">
         <a class="pl-10 hover:font-bold" href="/">Welcome</a>
         <a class="pl-10 hover:font-bold" href="/articles">Articles</a>
+        <a class="pl-10 hover:font-bold" href="/tasks">Tasks</a>
     </nav>
     <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
 </header>

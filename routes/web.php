@@ -31,3 +31,4 @@ Route::get('/extra/oef8', [\App\Http\Controllers\Oefening8Controller::class, 'oe
 Route::get('/tasks', [\App\Http\Controllers\TaskController::class, 'index']);
 Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
+Route::get('/tasks/{task}', [\App\Http\Controllers\TaskController::class, 'show']);
