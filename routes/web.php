@@ -29,3 +29,5 @@ Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/extra/test', [\App\Http\Controllers\TestController::class, 'test']);
 Route::get('/extra/oef8', [\App\Http\Controllers\Oefening8Controller::class, 'oef8']);
 Route::get('/tasks', [\App\Http\Controllers\TaskController::class, 'index']);
+Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
