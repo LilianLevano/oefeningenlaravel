@@ -18,7 +18,10 @@
             </p>
 
             <p>Prioriteit: {{$task['priority']}}</p>
+
+            <p>By: {{$task->author->name}}</p>
         </a>
+
 
 
 

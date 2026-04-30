@@ -13,5 +13,7 @@
         @endif
     </p>
 
+    <p>By: {{$task->author->name}}</p>
+
     <p>Prioriteit: {{$task['priority']}}</p>
 </x-site-layout>

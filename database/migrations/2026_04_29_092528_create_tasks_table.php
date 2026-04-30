@@ -18,6 +18,7 @@ return new class extends Migration
             $table->datetime('due_date');
             $table->boolean('completed');
             $table->enum('priority', ['low', 'medium', 'high']);
+            $table->foreignId('author_id');
             $table->timestamps();
         });
     }

@@ -23,6 +23,7 @@ class TaskFactory extends Factory
             'due_date' => $this->faker->date(),
             'completed' => $this->faker->boolean(),
             'priority' => $this->faker->randomElement(['low', 'medium', 'high']),
+            'author_id' => $this->faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
         ];
     }
 }
