@@ -11,7 +11,7 @@
 
 
 </head>
-<body>
+<body class="bg-[#110F1B] ">
 
 <header id="header" class=" bg-neutral-500">
     <nav class="flex flex-row flex-wrap gap-10 text-white items-center">
@@ -72,7 +72,7 @@
 
 <div class="bg"></div>
 
-<main class="pl-6">
+<main class="pl-6 text-[#E5E7EB]">
     <button id="hideNav" class="h-15 px-6 py-3 bg-blue-300 rounded-3xl  transform hover:-translate-y-1 transition duration-300 cursor-pointer absolute right-4 top-3">Hide Nav</button>
     {{$slot}}
 </main>
