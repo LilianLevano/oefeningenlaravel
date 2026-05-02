@@ -23,15 +23,22 @@
 
                 <p class="mt-2">
                     Status:
-                    @if($task['completed'] == 0)
+                    @if($task['completed_at'] == null)
                         <span class="text-red-500">❌</span>
                     @else
-                        <span class="text-green-500">✔️</span>
+                        <span class="text-green-500">{{$task['completed_at']}}</span>
                     @endif
                 </p>
 
                 <p class="text-sm mt-1">Prioriteit: {{$task['priority']}}</p>
 
+                <span class="text-sm mt-1">Tags:</span>
+
+                @foreach($task->tags as $tag)
+
+                    <span class="text-sm mt-1 bg-gray-300 text-black rounded-2xl px-4 ">{{$tag->name}}</span>
+
+                @endforeach
 
 
 

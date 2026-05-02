@@ -1,9 +1,13 @@
+@php use App\Models\Task; @endphp
 <x-site-layout>
     @slot('title', 'Tasks')
     <h1 class="text-3xl font-bold text-center mb-10 text-white">Task Manager</h1>
 
+
+
 <div class="flex flex-col items-center-safe gap-10  ">
     @foreach($tasks as $task)
+
 
         <div class="relative group">
             <a href="/tasks/{{$task->id}}"
@@ -26,14 +30,22 @@
 
                     <p class="mt-2">
                         Status:
-                        @if($task['completed'] == 0)
-                            <span class="text-red-500">❌</span>
+                        @if($task['completed_at'] == null)
+                            <span class="text-red-500">Not completed❌</span>
                         @else
-                            <span class="text-green-500">✔️</span>
+                            <span class="text-green-500">Completed at: {{$task['completed_at']}}</span>
                         @endif
                     </p>
 
                     <p class="text-sm mt-1">Prioriteit: {{$task['priority']}}</p>
+
+                    <span class="text-sm mt-1">Tags:</span>
+
+                    @foreach($task->tags as $tag)
+
+                        <span class="text-sm mt-1 bg-gray-300 text-black rounded-2xl px-4 ">{{$tag->name}}</span>
+
+                    @endforeach
 
 
 

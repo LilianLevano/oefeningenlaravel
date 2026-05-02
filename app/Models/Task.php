@@ -12,4 +12,12 @@ class Task extends Model
     public function author(){
         return $this->belongsTo(User::class, 'author_id', 'id');
     }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
+
+    protected $casts = [
+        'completed_at' => 'datetime',
+    ];
 }
