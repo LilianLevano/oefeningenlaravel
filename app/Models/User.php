@@ -38,4 +38,8 @@ class User extends Authenticatable
     public function tasks(){
         return $this->hasMany(Task::class, 'author_id', "id");
     }
+
+    public function profile(){
+        return $this->hasOne(Profile::class);
+    }
 }

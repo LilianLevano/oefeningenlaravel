@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Profile;
 use App\Models\Tag;
 use App\Models\Task;
 use App\Models\User;
@@ -25,8 +26,10 @@ class DatabaseSeeder extends Seeder
         Category::factory(3)->create();
 
 
-        Tag::factory(30)->create();
+        Tag::factory(10)->create();
         Task::factory(20)->create();
+
+
 
     }
 }
