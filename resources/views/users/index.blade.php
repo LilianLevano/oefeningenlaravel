@@ -8,9 +8,11 @@
             <div>
                 <a href="/users/{{$user->id}}"> <h2 class="text-2xl font-bold">{{$user->name}}</h2></a>
                 <p>Mail: {{$user->email}}</p>
+                <p>Bio: {{$user->profile->bio}}</p>
+                <p>Avatar: {{$user->profile->avatar}}</p>
                 <h3 class="text-xl underline">Geschreven artikels: </h3>
 
-                <p>Profile: {{$user->profile}}</p>
+
 
                 <ol class="list-decimal">
                     @foreach($user->articles as $article)
